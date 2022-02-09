@@ -10,6 +10,11 @@ exports.config = {
         username: process.env.DATABASE_USERNAME,
         password: process.env.DATABASE_PASSWORD,
         name: process.env.DATABASE_NAME
+    },
+    gmail: {
+        email: process.env.GMAIL_EMAIL,
+        password: process.env.GMAIL_PASSWORD,
+        professionalEmail: process.env.GMAIL_PROFESSIONAL
     }
 };
 //# sourceMappingURL=config.js.map

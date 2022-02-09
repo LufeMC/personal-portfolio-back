@@ -16,20 +16,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const projects_1 = require("../models/projects");
 const router = express_1.default.Router(); // Configuring this file as a router (manager of the URL extensions)
-router.post("/add_project", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/save", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const project = new projects_1.Project(req.body);
     try {
         yield project.save();
-        res.send(project);
+        res.json(project);
     }
     catch (error) {
         res.status(500).send(error);
     }
 }));
-router.get("/projects", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.get("/list", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const projects = yield projects_1.Project.find({});
     try {
-        res.send(projects);
+        res.json(projects);
     }
     catch (error) {
         res.status(500).send(error);

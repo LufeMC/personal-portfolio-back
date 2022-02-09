@@ -18,6 +18,10 @@ const ProjectSchema = new mongoose_1.default.Schema({
         type: String,
         required: true,
     },
+    url: {
+        type: String,
+        required: true,
+    },
 });
 exports.Project = mongoose_1.default.model("Project", ProjectSchema);
 //# sourceMappingURL=projects.js.map

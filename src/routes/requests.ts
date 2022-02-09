@@ -22,7 +22,7 @@ router.post("/sendEmail", async (req, res) => {
     const email = await mailer.sendEmail(
       `New request from ${request.name}`,
       `You received a new request!\n\n
-      ${request.name} whose email is ${request.emai} has made a new request.\n\n
+      ${request.name} whose email is ${request.email} has made a new request.\n\n
       They want you to to the following:\n${request.details}\n\n
       They have ${request.budget} and need the project until ${request.deadline}`);
     res.json(email);

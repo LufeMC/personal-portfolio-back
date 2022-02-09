@@ -16,11 +16,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const user_1 = require("../models/user");
 const router = express_1.default.Router(); // Configuring this file as a router (manager of the URL extensions)
-router.post("/add_user", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/save", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const user = new user_1.User(req.body);
     try {
         yield user.save();
-        res.send(user);
+        res.json(user);
     }
     catch (error) {
         res.status(500).send(error);

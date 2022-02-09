@@ -13,6 +13,10 @@ const ProjectSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  url: {
+    type: String,
+    required: true,
+  },
 });
 
 export const Project = mongoose.model("Project", ProjectSchema);
